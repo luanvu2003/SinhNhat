@@ -55,12 +55,35 @@
             text-align: center;
             width: 90%;
             max-width: 450px;
+
+            /* --- THÊM/SỬA CÁC DÒNG NÀY --- */
+            max-height: 80vh;
+            /* Giới hạn chiều cao thẻ tối đa 80% màn hình */
+            overflow-y: scroll;
+            overflow-x: hidden;
+            /* Cho phép cuộn nếu nội dung quá dài */
+            display: flex;
+            /* Giữ bố cục dọc */
+            flex-direction: column;
+            align-items: center;
+            /* ----------------------------- */
+
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             transition: all 0.6s ease;
             z-index: 200;
+        }
+
+        /* Thêm đoạn này để ẩn thanh cuộn cho đẹp (tùy chọn) */
+        .card::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .card::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
         }
 
         .hidden {
@@ -198,7 +221,20 @@
         .modal-content { background: #fff; padding: 20px; border-radius: 15px; max-width: 300px; text-align: center; color: #333; }
         .modal-img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
         .main-photo { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #fff; object-fit: cover; margin-bottom: 15px; }
-        #typewriter { min-height: 60px; font-size: 1rem; line-height: 1.5; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+         #typewriter {
+            min-height: 60px;
+            font-size: 1rem;
+            line-height: 1.6;
+            /* Tăng khoảng cách dòng cho dễ đọc */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+            /* --- THÊM DÒNG NÀY --- */
+            margin-bottom: 20px;
+            /* Tạo khoảng cách dưới cùng để không bị sát lề */
+            text-align: justify;
+            /* Căn đều 2 bên cho văn bản dài đẹp hơn (tùy chọn) */
+            /* -------------------- */
+        }
     </style>
 </head>
 
